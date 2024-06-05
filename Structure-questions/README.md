@@ -150,4 +150,8 @@ Address of variable D: 0x7ffe44dcaf00
 Size of OutStruct: 16 bytes
 Size of InStruct: 12 bytes
 ~~~
+`NOTE:` Qua đoạn code khi có `nhiều cấu trúc lồng nhau` thì sự `căng chỉnh bộ nhớ` vẫn `phụ thuộc` vào `kiểu dữ liệu` của biến chiếm số `bytes cao nhất` trong chương trình. (Ở đoạn code trên là kiểu `int`)
+<p align="center">
+    <img src="./Images/5.png" width="800px" alt="">
+</p>
 
