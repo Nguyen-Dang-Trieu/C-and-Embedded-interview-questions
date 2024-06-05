@@ -12,8 +12,11 @@ typedef struct
 int main(int argc, char *argv[])
 {
     //Calculate size of structure
-    printf("\n Size of Structure = %d\n\n",sizeof(InfoData));
+    printf("\n Size of Structure = %d bytes\n\n",sizeof(InfoData));
     return 0;
 }
 ~~~
-Output:
+Output: 12 bytes
+<p align="center">
+    <img src="./Images/Vi_du_2.png" width="500px" alt="">
+</p>
