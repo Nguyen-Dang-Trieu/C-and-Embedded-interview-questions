@@ -40,6 +40,7 @@ int main()
 The pointers pointing to a deallocated memory block are known as `Dangling Pointers`.
 
 Reference: https://www.scaler.com/topics/c/dangling-pointer-in-c/
+
 ------------------------
 #### 2. How to access the fixed memory location in embedded C?
 ~~~cpp
@@ -170,3 +171,12 @@ int main(){
 }
 ~~~
 **Output:** I am an Aticleworld
+
+#### 6. What is meant by structure padding?
+*In the case of structure or union, the compiler inserts some extra bytes between the members of structure or union for the alignment, these extra unused bytes are called padding bytes and this technique is called `padding`.*
+
+Padding has increased the performance of the processor at the penalty of memory. In structure or union data members aligned as per the size of the highest bytes member to prevent the penalty of performance.
+
+`Note:` Alignment of data types mandated by the `processor architecture`, not by `language`. <br>
+**You can see the below Articles,**
+- 
