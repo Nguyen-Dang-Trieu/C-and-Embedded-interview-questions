@@ -39,7 +39,8 @@ int main()
 
 The pointers pointing to a deallocated memory block are known as `Dangling Pointers`.
 
-Reference: https://www.scaler.com/topics/c/dangling-pointer-in-c/
+**Reference:**
+- [Dangling Pointer in C](//www.scaler.com/topics/c/dangling-pointer-in-c/)
 
 ------------------------
 #### 2. How to access the fixed memory location in embedded C?
