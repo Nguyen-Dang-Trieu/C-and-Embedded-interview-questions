@@ -103,3 +103,5 @@ Size of struct InfoData = 16 bytes
 <p align="center">
     <img src="./Images/4.png" width="800px" alt="">
 </p>
+
+To understand more about pointer sizes in C, refer to: (Size of Pointer in C)[]
