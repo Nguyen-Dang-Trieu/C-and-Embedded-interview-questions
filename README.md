@@ -180,5 +180,5 @@ Padding has increased the performance of the processor at the penalty of memory.
 
 `Note:` Alignment of data types mandated by the `processor architecture`, not by `language`. <br>
 **You can see the below Articles,**
-- [Struct padding questions in C](https://github.com/Nguyen-Dang-Trieu/C--and-Embedded-interview-questions/blob/main/structure%20padding%20interview%20questions%20in%20C./README.md)
+- [Struct padding questions in C](https://github.com/Nguyen-Dang-Trieu/C--and-Embedded-interview-questions/tree/main/Structure-questions)
 
