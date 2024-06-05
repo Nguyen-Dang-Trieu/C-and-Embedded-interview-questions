@@ -40,3 +40,24 @@ int main()
 The pointers pointing to a deallocated memory block are known as `Dangling Pointers`.
 
 Reference: https://www.scaler.com/topics/c/dangling-pointer-in-c/
+
+#### 2. How to access the fixed memory location in embedded C?
+~~~cpp
+//Memory address, you want to access
+#define RW_FLAG 0x1FFF7800
+
+//Pointer to access the Memory address
+volatile uint32_t *flagAddress = NULL;
+
+//variable to stored the read value
+uint32_t readData = 0;
+
+//Assign addres to the pointer
+flagAddress = (volatile uint32_t *)RW_FLAG;
+
+//Write value to the memory
+*flagAddress = 12; // Write
+
+//Read value from memory
+readData = *flagAddress;
+~~~
