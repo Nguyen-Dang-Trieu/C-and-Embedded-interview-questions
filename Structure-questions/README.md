@@ -108,5 +108,32 @@ To understand more about pointer sizes in C, refer to: [Size of Pointer in C](ht
 
 -------------------
 #### 5.
+~~~cpp
+#include <stdio.h>
 
+// Define InStruct structure
+typedef struct {
+    int A;     // int 4 bytes
+    double B;   // 8 bytes
+    float C;   // float 4 bytes
+    
+} InStruct;
+
+// Define OutStruct structure
+typedef struct {
+    char D;   // char 1 byte
+    InStruct E;
+} OutStruct;
+
+int main() {
+    // Khởi tạo một đối tượng OuterStruct
+    OutStruct my_struct;
+
+    // In kích thước của cấu trúc OuterStruct và InnerStruct
+    printf("Size of OuterStruct: %ld bytes\n", sizeof(OutStruct));
+    printf("Size of InnerStruct: %ld bytes\n", sizeof(InStruct));
+
+    return 0;
+}
+~~~
 
