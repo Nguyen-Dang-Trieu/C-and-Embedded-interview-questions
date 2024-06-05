@@ -40,7 +40,7 @@ int main()
 The pointers pointing to a deallocated memory block are known as `Dangling Pointers`.
 
 Reference: https://www.scaler.com/topics/c/dangling-pointer-in-c/
-
+------------------------
 #### 2. How to access the fixed memory location in embedded C?
 ~~~cpp
 //Memory address, you want to access
@@ -61,3 +61,112 @@ flagAddress = (volatile uint32_t *)RW_FLAG;
 //Read value from memory
 readData = *flagAddress;
 ~~~
+-----------------
+#### 3. What will be the output of the below C program? 
+~~~cpp
+#include <stdio.h>
+
+int main()
+{
+    char var = 10;
+    void *ptr = &var;
+
+    printf("%d %d",*(char*)ptr,++(*(char*)ptr));
+    return 0;
+}
+~~~
+Output: undefined
+Explanation: Due to the sequence point the output vary on a different platform.
+---------------------------
+#### 4. Write a program swap two numbers without using the third variable?
+**Method 1: Using Arithmetic Operators**
+~~~cpp
+#include <stdio.h>
+
+int main(){
+    int a = 10, b = 5;
+
+    // algo to swap 'a' and 'b'
+    a = a + b;  // a becomes 15
+    b = a - b;  // b becomes 10
+    a = a - b;  // fonally a becomes 5
+
+    printf("After Swapping the value of: a = %d, b = %d\n\n", a, b);
+    return 0;
+}
+~~~
+
+**Method 2: Using Bitwise XOR Operator**
+~~~cpp
+#include <stdio.h>
+
+/* XOR (^)
+  1 xor 1 = 0
+  1 xor 0 = 1
+  0 xor 1 = 1
+  0 xor 0 = 0
+  
+*/
+int main(){
+    int a = 10, b = 5;  // a = 0b0000 1010 , b = 0b0000 0101
+
+    // algo to swap 'a' and 'b'
+    /* a =  0000 1010
+              XOR
+       b =  0000 0101
+     --------------------
+            0000 0101 = 5 => a = a ^ b = 5
+    */
+    a = a ^ b;  
+
+
+    /* a =  0000 0101
+              XOR
+       b =  0000 0101
+     --------------------
+            0000 0000 = 0 => b = a ^ b = 0
+    */
+    b = a ^ b;  
+
+
+    /* a =  0000 0101
+              XOR
+       b =  0000 0000
+     --------------------
+            0000 101 = 5 => a = a ^ b = 5
+    */
+    a = a ^ b;  
+
+    printf("After Swapping the value of: a = %d, b = %d\n\n", a, b);
+    return 0;
+~~~
+-------------------
+#### 5. What will be the output of the below C program? 
+~~~cpp
+#include <stdio.h>
+
+#define ATICLEWORLD 0x01
+#define AUTHOR      0x02
+/* OR(|)
+  0 or 0 = 0
+  0 or 1 = 1
+  1 or 0 = 1
+  1 or 1 = 1 */
+  
+int main(){
+    unsigned char test = 0x00;
+
+    test|=ATICLEWORLD;
+    test|=AUTHOR;
+
+    if(test & ATICLEWORLD){ // dk if true khi (test & ATICLEWORLD) = 1 (= 0x01)
+        printf("I am an Aticleworld");
+    }
+    
+    if(test & AUTHOR){ // dk if true khi (test & AUTHOR) = 1 (= 0x01)
+        printf(" Author");
+    }
+    return 0;
+}
+~~~
+**Output:** I am an Aticleworld
