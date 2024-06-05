@@ -113,27 +113,41 @@ To understand more about pointer sizes in C, refer to: [Size of Pointer in C](ht
 
 // Define InStruct structure
 typedef struct {
-    int A;     // int 4 bytes
-    double B;   // 8 bytes
-    float C;   // float 4 bytes
-    
+    int A;       // int 4 bytes
+    short B;     // short 2 bytes
+    float C;     // float 4 bytes
 } InStruct;
 
 // Define OutStruct structure
 typedef struct {
-    char D;   // char 1 byte
+    char D;      // char 1 byte
     InStruct E;
 } OutStruct;
 
 int main() {
-    // Khởi tạo một đối tượng OuterStruct
+    // Initialize an object of OutStruct
     OutStruct my_struct;
 
-    // In kích thước của cấu trúc OuterStruct và InnerStruct
-    printf("Size of OuterStruct: %ld bytes\n", sizeof(OutStruct));
-    printf("Size of InnerStruct: %ld bytes\n", sizeof(InStruct));
+    // Print addresses of member variables of struct InStruct
+    printf("\nAddress of variable A: %p", (void*)&my_struct.E.A);
+    printf("\nAddress of variable B: %p", (void*)&my_struct.E.B);
+    printf("\nAddress of variable C: %p", (void*)&my_struct.E.C);
+    printf("\nAddress of variable D: %p", (void*)&my_struct.D);
+
+    // Print size of structures OutStruct and InStruct
+    printf("\nSize of OutStruct: %ld bytes\n", sizeof(OutStruct));
+    printf("Size of InStruct: %ld bytes\n", sizeof(InStruct));
 
     return 0;
 }
+~~~
+**Output:**
+~~~cpp
+Address of variable A: 0x7ffe44dcaf04
+Address of variable B: 0x7ffe44dcaf08
+Address of variable C: 0x7ffe44dcaf0c
+Address of variable D: 0x7ffe44dcaf00
+Size of OutStruct: 16 bytes
+Size of InStruct: 12 bytes
 ~~~
 
