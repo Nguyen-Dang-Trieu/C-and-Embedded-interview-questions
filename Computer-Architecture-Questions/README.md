@@ -1,3 +1,7 @@
+### Reference
+- https://deepbluembedded.com/embedded-systems-interview-questions/#google_vignette
+
+Còn nhiều vấn đề khai thác
 ### Q1. What is Endianness? Little and Big ❓
 ❓ **What is Endianness?** 🤔 </br>
 
@@ -5,6 +9,10 @@
 <p align="center">
     <img src="./Images/Endianness.png" width="500px" alt="">
 </p>
+
+💡 `Note `: 0A0B0C0D là số hexa
+
+---
 
 ❓ **How does Endianness work?**
 There are two ways Endianness  allows data to be stored in memory: </br>
@@ -96,16 +104,19 @@ Chuỗi: 39B
 ~~~
 
 ### Q3. Write C code to check for the endianness of the system ❓
+🌱🌱🌱 **Explain:** Để có thể nhận biết được hệ thống máy tính đó sử dụng Little-Endian hay Big-Endian thì ta có thể cho 1 giá trị và kiếm tra `byte (LSB)` or `byte (MSB)`.
+Trong đoạn code C bên dưới thì tôi đang kiếm tra `byte (LSB)`.
 ~~~c
-
 #include <stdio.h>
 
 int main()
 {
     printf("Kich thuoc cua unsigned int: %zu byte\n", sizeof(unsigned int));
-    unsigned int value = 312784434; // 12 A4 B6 32
+    
+    unsigned int value = 312784434; 
+    printf("Gia tri hexa cua %u là: %X\n", value, value);
+    
     void* ptr1 = &value;
-    printf("Địa chỉ của biến value: %p\n", ptr1);
     
     char *ptr = (char*) &value;
     /* 
@@ -114,13 +125,52 @@ int main()
      *
      */
 
-    if(*ptr == 32){
+    if(*ptr == 0x32){
         printf("Little-Endian");
     }
-    else if(*ptr == 12){
+    else if(*ptr == 0x12){
         printf("Big-Endian");
     }
 
     return 0;
 }
+~~~
+**OUTPUT**
+~~~
+Kich thuoc cua unsigned int: 4 byte
+Gia tri hexa cua 312784434 là: 12A4B632
+Little-Endian
+~~~
+### Q4. Endianness (Conversion) ❓
+~~~c
+#include <stdio.h>
+#include <stdint.h> // Để sử dụng uint32_t
+
+uint32_t ChangeEndianness(uint32_t value);
+
+int main(){
+    uint32_t little_endian = 0x0A0B0C0D; // Giá trị hệ thập lục phân
+    uint32_t big_endian = 0;
+    
+    big_endian = ChangeEndianness(little_endian);
+    
+    printf("little_endian = %08X\n", little_endian); // In giá trị với 8 ký tự
+    printf("big_endian = %08X\n", big_endian); // In giá trị với 8 ký tự
+    
+    return 0;
+}
+
+uint32_t ChangeEndianness(uint32_t value){
+    uint32_t result = 0;
+    result |= (value & 0x000000FF) << 24; // Byte thấp nhất trở thành byte cao nhất
+    result |= (value & 0x0000FF00) << 8;  // Byte thứ hai từ dưới lên
+    result |= (value & 0x00FF0000) >> 8;  // Byte thứ ba từ dưới lên
+    result |= (value & 0xFF000000) >> 24; // Byte cao nhất trở thành byte thấp nhất
+    return result;
+}
+~~~
+**OUTPUT**
+~~~
+little_endian = 0A0B0C0D
+big_endian = 0D0C0B0A
 ~~~
