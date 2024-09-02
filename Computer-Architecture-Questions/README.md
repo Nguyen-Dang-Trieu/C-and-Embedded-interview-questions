@@ -1,4 +1,4 @@
-### 1. What is Endianness? Little and Big
+### Q1. What is Endianness? Little and Big
 ❓ **What is Endianness?** 🤔 </br>
 
 ✅ **Endianness** is the order by which `bytes` are stored in computer memory. Endianness tells us whether bytes are represented from left to right or right to left.
@@ -19,3 +19,10 @@ There are two ways Endianness  allows data to be stored in memory: </br>
 <p align="center">
     <img src="./Images/Big-Endian.png" width="500px" alt="">
 </p>
+
+🔥 **Example:**
+<p align="center">
+    <img src="./Images/Example.png" width="500px" alt="">
+</p>
+
+### Q2. Write C code to check for the endianness of the system
