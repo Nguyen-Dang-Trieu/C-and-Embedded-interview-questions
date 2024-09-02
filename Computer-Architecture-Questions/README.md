@@ -22,7 +22,35 @@ There are two ways Endianness  allows data to be stored in memory: </br>
 
 🔥 **Example:**
 <p align="center">
-    <img src="./Images/Example.png" width="500px" alt="">
+    <img src="./Images/Example.png" width="800px" alt="">
 </p>
 
 ### Q2. Write C code to check for the endianness of the system
+~~~c
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Kich thuoc cua unsigned int: %zu byte\n", sizeof(unsigned int));
+    unsigned int value = 312784434; // 12 A4 B6 32
+    void* ptr1 = &value;
+    printf("Địa chỉ của biến value: %p\n", ptr1);
+    
+    char *ptr = (char*) &value;
+    /* 
+     * Ép kiểu con trỏ từ unsigned int* sang char* không thay đổi địa chỉ, chỉ thay đổi cách chương trình sẽ 
+     * diễn giải dữ liệu mà con trỏ trỏ tới.
+     *
+     */
+
+    if(*ptr == 32){
+        printf("Little-Endian");
+    }
+    else if(*ptr == 12){
+        printf("Big-Endian");
+    }
+
+    return 0;
+}
+~~~
