@@ -154,18 +154,18 @@ int main(){
     
     big_endian = ChangeEndianness(little_endian);
     
-    printf("little_endian = %08X\n", little_endian); // In giá trị với 8 ký tự
-    printf("big_endian = %08X\n", big_endian); // In giá trị với 8 ký tự
+    printf("little_endian = %08X\n", little_endian); 
+    printf("big_endian = %08X\n", big_endian); 
     
     return 0;
 }
 
 uint32_t ChangeEndianness(uint32_t value){
     uint32_t result = 0;
-    result |= (value & 0x000000FF) << 24; // Byte thấp nhất trở thành byte cao nhất
-    result |= (value & 0x0000FF00) << 8;  // Byte thứ hai từ dưới lên
-    result |= (value & 0x00FF0000) >> 8;  // Byte thứ ba từ dưới lên
-    result |= (value & 0xFF000000) >> 24; // Byte cao nhất trở thành byte thấp nhất
+    result |= (value & 0x000000FF) << 24; 
+    result |= (value & 0x0000FF00) << 8; 
+    result |= (value & 0x00FF0000) >> 8;  
+    result |= (value & 0xFF000000) >> 24; 
     return result;
 }
 ~~~
