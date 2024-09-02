@@ -182,3 +182,4 @@ Padding has increased the performance of the processor at the penalty of memory.
 **You can see the below Articles,**
 - [Struct padding questions in C](https://github.com/Nguyen-Dang-Trieu/C--and-Embedded-interview-questions/tree/main/Structure-questions)
 
+
