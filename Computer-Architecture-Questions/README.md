@@ -3,7 +3,7 @@
 
 ✅ **Endianness** is the order by which `bytes` are stored in computer memory. Endianness tells us whether bytes are represented from left to right or right to left.
 <p align="center">
-    <img src="./Images/Endianess.png" width="500px" alt="">
+    <img src="./Images/Endianness.png" width="500px" alt="">
 </p>
 
 ❓ **How does Endianness work?**
