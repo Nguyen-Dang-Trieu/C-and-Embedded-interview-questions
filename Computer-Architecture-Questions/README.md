@@ -174,3 +174,5 @@ uint32_t ChangeEndianness(uint32_t value){
 little_endian = 0A0B0C0D
 big_endian = 0D0C0B0A
 ~~~
+
+### Q5. What’s Bit Banging? ❓
