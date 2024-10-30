@@ -1,7 +1,9 @@
 # C and Embedded interview questions ?
 ## Reference
 - https://www.geeksforgeeks.org/embedded-c-interview-questions/
+- https://www.jobinterviewninjas.com/interview-questions/embedded-c-interview-questions/#explain-segmentation-fault-error-in-c
 
+  
 #### 1. What do you understand by **Wild Pointer**? How is it different from **Dangling Pointer**?
 A _`Wild Pointer`_ is an uninitialized pointer (i.e. a pointer that does not store any valid address in it nor a NULL value) so by default they will hold some set location remember at will and if we try to perform any operation using them then it may cause our program to crash.
 
