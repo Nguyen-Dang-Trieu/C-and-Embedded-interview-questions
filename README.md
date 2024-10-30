@@ -1,7 +1,7 @@
 # C and Embedded interview questions ?
 ## Reference
 - https://www.geeksforgeeks.org/embedded-c-interview-questions/
-- https://www.jobinterviewninjas.com/interview-questions/embedded-c-interview-questions/#explain-segmentation-fault-error-in-c
+- https://www.adaface.com/blog/embedded-c-interview-questions/
 
   
 #### 1. What do you understand by **Wild Pointer**? How is it different from **Dangling Pointer**?
