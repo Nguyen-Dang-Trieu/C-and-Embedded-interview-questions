@@ -1,7 +1,7 @@
 # 
 ## Reference
 - https://icarus.cs.weber.edu/~dab/cs1410/textbook/6.Functions/inline.html
-
+- https://embeddedwala.com/Blogs/embedded-c/inline-function-in-c#google_vignette
 
 Macros and inline functions are very different programming constructs, but their purpose and behavior are similar. We first explored macros as one way of making a symbolic constant. In this section, we extend the macro syntax by adding parameters. The preprocessor expands macros by replacing one sequence of characters with another. Specifically, it replaces the macro name with the macro body. Parameterized macros are common in C programs but inline functions typically replace them in C++.
 
