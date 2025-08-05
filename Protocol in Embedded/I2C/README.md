@@ -1,4 +1,5 @@
 📘 I. Câu hỏi cơ bản
+
 I²C là gì? Có những đặc điểm gì nổi bật so với UART hoặc SPI?
 
 I²C có bao nhiêu dây? Vai trò của từng dây là gì?
@@ -15,7 +16,9 @@ I²C hoạt động đồng bộ hay bất đồng bộ? Vì sao?
 
 Điểm khác biệt giữa master và slave trong I²C là gì?
 
+
 🔧 II. Câu hỏi kỹ thuật chi tiết
+
 Diễn tả một chuỗi truyền I²C từ master đến slave để ghi 1 byte.
 
 Start và Stop condition trong I²C là gì? Được tạo ra như thế nào?
@@ -31,6 +34,7 @@ Có thể giao tiếp với 2 thiết bị có cùng địa chỉ I²C không? G
 Tốc độ I²C thông thường là bao nhiêu? Có bao nhiêu chế độ tốc độ?
 
 💻 III. Câu hỏi về lập trình và thực tiễn
+
 Bạn đã từng viết driver I²C ở mức register chưa?
 
 Bạn có biết cách dùng DMA với I²C không? Lợi ích là gì?
@@ -46,6 +50,7 @@ Làm sao để debug một thiết bị không trả lời trên I²C?
 Gợi ý: kiểm tra bằng logic analyzer, kiểm tra điện trở pull-up, reset slave, kiểm tra địa chỉ…
 
 🧠 IV. Câu hỏi nâng cao
+
 Bus recovery trong I²C là gì? Tại sao cần? Làm thế nào để implement?
 
 Phân biệt giữa repeated start và stop/start mới trong I²C. Khi nào nên dùng?
